@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-alpha: #ff7979;
+  --color-bg: #333;
+  --color-bg-light: #fafafa;
+  --color-text: #333;
+  --color-text-dark: #222;
+  --color-text-light: #555;
+  font-family: 'Lato', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text-dark);
+  font-size: 1.6rem;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  background: var(--color-bg-light);
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  transform-origin: top left;
+  transition: transform 0.4s linear;
+  width: 100vw;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.container.show-nav + nav ul {
+  transform: translateX(0);
+}
+
+.circle-container {
+  left: -10rem;
+  position: fixed;
+  top: -10rem;
+}
+
+.circle {
+  background: var(--color-alpha);
+  border-radius: 50%;
+  height: 20rem;
+  position: relative;
+  transition: transform 0.4s linear;
+  width: 20rem;
+}
+
+.circle button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.6rem;
+  height: 10rem;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.content {
+  max-width: 100rem;
+  margin: 5rem auto;
+}
+
+.content h1 {
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.content small {
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.content p {
+  line-height: 1.5;
+}
+
+.content h3 {
+  color: var(--color-text-dark);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+nav {
+  bottom: 4rem;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 3rem;
+  transform: translateX(-200%);
+  transition: transform .4s ease-in;
+}
+
+nav li {
+  margin: 4rem 0;
+  text-transform: uppercase;
+}
+
+nav li + li {
+  margin-left: 1.5rem;
+}
+
+nav li + li + li {
+  margin-left: 3rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav i {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+
+  .container {
+    padding: 5rem;
+  }
+
+}
